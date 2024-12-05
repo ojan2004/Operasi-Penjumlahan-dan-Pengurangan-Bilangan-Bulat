@@ -227,5 +227,15 @@
             document.getElementById('feedback').innerHTML = feedback;
         }
     </script>
+    <script>
+    // Menampilkan nama pengguna dari Local Storage
+    const username = localStorage.getItem('username');
+    if (username) {
+        document.body.insertAdjacentHTML('afterbegin', `<p class="text-center text-lg font-bold mt-4">Selamat Datang, ${username}!</p>`);
+    } else {
+        window.location.href = "index.html"; // Kembali ke formulir jika nama tidak ditemukan
+    }
+</script>
+
 </body>
 </html>
