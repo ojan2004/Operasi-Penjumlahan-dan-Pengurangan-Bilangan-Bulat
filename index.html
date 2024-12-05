@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Sebelum Latihan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #e6f7ff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #2c5282;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #38a169;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #2f855a;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container">
+        <h2>Selamat Datang di Latihan Soal</h2>
+        <form id="start-form">
+            <label for="username" class="block mb-2 text-sm font-medium text-gray-700">
+                Masukkan Nama Anda
+            </label>
+            <input type="text" id="username" name="username" 
+                   class="block w-full p-2 border border-gray-300 rounded-md" 
+                   placeholder="Nama Anda" required>
+            <button type="button" onclick="startQuiz()">Mulai Latihan</button>
+        </form>
+    </div>
+
+    <script>
+        function startQuiz() {
+            const username = document.getElementById('username').value.trim();
+            if (username) {
+                localStorage.setItem('username', username); // Simpan nama ke Local Storage
+                window.location.href = "Latihan.html"; // Pindah ke halaman latihan
+            } else {
+                alert("Harap masukkan nama Anda!");
+            }
+        }
+    </script>
+</body>
+</html>
